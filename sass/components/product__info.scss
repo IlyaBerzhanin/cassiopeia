@@ -1,0 +1,33 @@
+.product__info {
+    @include flex(column, space-between, flex-start);
+    width: 523px;
+    height: 651px;
+
+    &__header {
+        width: 490px;
+        height: 76px;
+        padding-bottom: 93px;
+        border-bottom: 1px solid #E6E6EB;
+
+        & .product-name {
+            @include font('Inter', 2.4rem, black, 500, 2.8rem);
+            text-transform: capitalize;
+        }
+
+        & .product-price-block {
+            @include flex(row, space-between, baseline);
+            width: 163px;
+            text-transform: capitalize;
+            margin-top: 20px;
+
+            & .current-price {
+                @include font('Inter', 2.8rem, black, 600, 2.8rem);
+            }
+
+            & .old-price {
+                text-decoration: line-through;
+                @include font('Inter', 1.8rem, #82828B, 500, 2.2rem);
+            }
+        }
+    }
+}

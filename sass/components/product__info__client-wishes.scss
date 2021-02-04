@@ -1,0 +1,53 @@
+.product__info__client-request-block {
+  width: 521px;
+  height: 174px;
+
+  & .request {
+    height: 58px;
+    width: 100%;
+    @include flex(row, space-between, center);
+
+    &__title {
+      width: 90%;
+      height: 58px;
+      border: none;
+      border-bottom: 1px solid #E6E6EB;
+      @include font('Inter', 1.4rem, black, 400, 2rem);
+      transition: all 0.5s linear;
+
+      &:focus {
+        border-bottom: 1px solid #595CFF;
+        outline: none;
+
+        &::placeholder {
+            opacity: 0;
+        }
+      }
+
+      &::placeholder {
+        @include font('Inter', 1.4rem, black, 400, 2rem);
+        transition: all 0.3s linear;
+      }
+      
+    }
+
+    &__button {
+      width: 10%;
+      height: 58px;
+      @include flex(row, center, center);
+      transition: transform 0.3s ease-out;
+
+      & .product-add-wish {
+          fill: black;
+      }
+
+      &:hover {
+          transform: scale(1.5);
+
+          & .product-add-wish {
+              fill: #595CFF;
+          }
+      }
+    }
+  }
+}

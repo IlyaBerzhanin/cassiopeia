@@ -1,0 +1,38 @@
+.product__info__user-action-buttons {
+    width: 385px;
+    @include flex(row, space-between, center);
+
+    & .first-button {
+        width: 309px;
+        height: 56px;
+        border-radius: 5px;
+        border: 1px solid  #E6E6EB;
+        text-transform: capitalize;
+        text-decoration: none;
+        @include font('Inter', 1.4rem, black, 500, 1.7rem);
+        @include flex(row, center, center);
+        transition: all 0.5s ease-in;
+
+        &:hover {
+            background-color: #595CFF;
+            color: white;
+        }
+    }
+
+    & .second-button {
+        width: 56px;
+        height: 56px;
+        border: 1px solid #E6E6EB;
+        border-radius: 5px;
+        @include flex(row, center, center);
+        transition: all 0.5s ease-in;
+
+        &:hover {
+            background-color: #595CFF;
+
+            & .product-shopping-cart {
+                fill: white;
+            }
+        }
+    }
+}

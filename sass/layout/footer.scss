@@ -1,0 +1,93 @@
+$footer: #1C1C1C;
+$footer-text: #ffffff;
+$hover-color: #595CFF;
+$nav-border-and-copyright: rgba(230, 230, 235, 0.2);
+
+.footer-container {
+    background-color: $footer;
+}
+
+.footer {
+    height: 356px;
+    margin-top: 100px;
+    color: $footer-text;
+
+    &__nav {
+        @include flex(row, space-between, unset);
+        height: 286px;
+        border-bottom: 1px solid $nav-border-and-copyright;
+
+        &__block {
+            @include flex(column, unset, unset);
+            margin-top: 58px;
+            list-style: none;
+
+            & .block-item {
+                margin-top: 11px;
+                width: fit-content;
+
+                &__name {
+                    @include font('Inter', 1.4rem, $footer-text, 500, 1.7rem);
+                    text-decoration: none;
+                    margin-top: 11px;
+                    transition: all 0.3s linear;
+
+                    &:after {
+                        content: '';
+                        width: 0%;
+                        height: 1px;
+                        background-color: $hover-color;
+                        display: block;
+                        transition: width 0.4s linear;
+                    }
+    
+                    &:hover {
+                        color: $hover-color;
+
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            & .block-title {
+                @include font('Inter', 1.6rem, inherit, 400, 2.4rem)
+            }
+            
+            & .phone-number {
+                 @include font('Inter', 1.2rem, inherit, 600, 1.8rem);
+            }
+
+            & .social-networks {
+                margin-top: 9px;
+                width: 112px;
+                @include flex(row, space-between, none);
+
+                &__icon {
+                    display: flex;
+                    align-items: center;
+                    width: 30px;
+                    height: 40px;
+
+                    &-active {
+                       transition: fill 0.4s linear;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        & .social-networks__icon-active {
+                            fill: $hover-color;
+                        }
+                    }
+                }
+            }  
+
+         }
+    }
+
+    & .copyright {
+        @include font('Inter', 1.2rem, $nav-border-and-copyright, 400, 1.6rem);
+        margin-top: 20px;
+    }
+}

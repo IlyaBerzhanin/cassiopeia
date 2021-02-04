@@ -1,0 +1,24 @@
+.delivery__buttons {
+    margin-top: 24px;
+    @include flex(row, space-evenly, center);
+
+    &__first, &__second {
+        width: 174px;
+        height: 46px;
+        @include font('Inter', 1.4rem, black, 400, 2rem);
+        text-transform: capitalize;
+        @include flex(row, space-evenly, center);
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s linear;
+
+        &:hover {
+            background-color: #595CFF;
+            color: white;
+
+            & .delivery-btn-arrow {
+                fill: white;
+            }
+        }
+    }
+}

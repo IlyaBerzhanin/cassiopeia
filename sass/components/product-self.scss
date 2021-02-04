@@ -1,0 +1,76 @@
+.showed-image {
+  opacity: 1;
+}
+
+.product__itself {
+   &__image-container {
+      background-color: bisque;
+       width: 568px;
+       height: 568px;
+       border-radius: 5px;
+       position: relative;
+       overflow: hidden;
+
+       & .product-image {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        opacity: 0;
+        transition: all 0.4s linear;
+
+        &:nth-of-type(3) {
+          width: 140%;
+        }
+       }
+   }
+
+   &__benefits {
+    width: 506px;
+    @include flex(row, space-between, center);
+    margin: 20px 0 95px 0;
+  
+    & .benefits__item {
+      width: 142px;
+      @include flex(row, start, center);
+      @include font('Inter', 1.2rem, black, 400, 1.6rem);
+
+      &:hover {
+        & .benefits__item__description {
+          cursor: pointer;
+        }
+
+        & .benefits__item__circle {
+          border: 1px solid #595CFF;
+          cursor: pointer;
+          color:#595CFF;
+
+          animation-name: heart;
+          animation-duration: 1.2s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+      }
+  
+      &__circle {
+        height: 46px;
+        width: 46px;
+        border: 1px solid black;
+        border-radius: 50%;
+        @include flex(row, center, center);
+        text-transform: uppercase;
+        transition: all 0.3s linear;
+      }
+  
+      &__description{
+          margin-left: 10px;
+      }
+    }
+  }
+}
+
+
+@keyframes heart {
+  0%{transform: scale(1);}
+  50%{transform: scale(2);}
+  100%{transform: scale(1);}
+}

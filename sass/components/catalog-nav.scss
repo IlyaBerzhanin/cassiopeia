@@ -1,0 +1,96 @@
+.level-current {
+    text-transform: capitalize;
+    @include font("Inter", 3.2rem, black, 500, 3.8rem);
+}
+
+.list-navigation {
+  margin-top: 41px;
+
+  & .wrapper {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e6e6eb;
+    @include flex(row, space-between, center);
+  }
+}
+
+.items-number {
+  @include font("Inter", 1.6rem, black, 400, 2.4rem);
+}
+
+.main-list {
+  @include flex(row, space-between, center);
+  width: 580px;
+  list-style: none;
+
+  &__sub-list {
+    width: 52px;
+    @include font("Inter", 1.4rem, black, 400, 2rem);
+    text-transform: capitalize;
+    appearance: none;
+    background: url("/images/svg/drop-arrow.svg");
+    background-position-x: right;
+    background-position-y: 7px;
+    background-repeat: no-repeat;
+    border: 2px solid white;
+    outline: none;
+    transition: all 0.3s linear;
+    position: relative;
+
+    & a {
+      text-decoration: none;
+      color: black;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      & ul {
+        height: 100px;
+
+        & li {
+          & a {
+            font-size: 1.4rem;
+            opacity: 1;
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
+          }
+        }
+      }
+    }
+
+    & ul {
+      position: absolute;
+      width: 52px;
+      list-style: none;
+      height: 0px;
+      transition: all 0.3s linear;
+      @include flex(column, space-evenly, flex-start);
+
+      & li {
+        border-bottom: 2px solid rgba(255, 255, 255, 0);
+        width: 52px;
+        transition: all 0.3s linear;
+
+        &:hover {
+          border-bottom: 2px solid #595cff;
+          cursor: pointer;
+        }
+
+        & a {
+          text-decoration: none;
+          color: black;
+          opacity: 0;
+          font-size: 0;
+          transition: all 0.6s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+.first-hidden-gallery {
+  display: none;
+}
+
+.second-hidden-gallery {
+  display: none;
+}

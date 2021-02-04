@@ -1,0 +1,111 @@
+@keyframes paint-circle {
+    0% {stroke-dashoffset: 1359.759765625;}
+    100% {stroke-dashoffset: 0;}
+}
+
+@keyframes activate-dash {
+    0% {stroke-dashoffset: 60;}
+    100% {stroke-dashoffset: 0;}
+}
+
+// @keyframes scaled-item {
+//     0% {transform: scale(1) translateY(0px);}
+//     100%{transform: scale(2) translateY(-20px);}
+// }
+
+// .scaled-item {
+//     animation-name: scaled-item;
+//     animation-duration: 0.4s;
+//     animation-fill-mode: forwards;
+// }
+
+.scaled-item {
+    transform: scale(2);
+}
+
+.paint-circle {
+    animation-name: paint-circle;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.activate-dash {
+    animation-name: activate-dash;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+} 
+
+////////////////////////////////////////////////////////////////////
+
+.checkout-container {
+    @include flex(row, space-between, center);
+}
+
+.current-stages {
+  @include flex(row, space-between, center);
+  width: 490px;
+
+  &__item {
+      @include flex(row, space-between, center);
+      @include font('Inter', 1.6rem, #AFB1BD, 400, 2.4rem);
+      transition: transform 0.6s ease-in;
+
+      & .stage {
+          text-transform: capitalize;
+          margin-left: 15px;
+      }
+  }
+}
+
+.moving-outline {
+    transition: all 1s linear;
+    & circle {
+        transition: all 2s linear;
+    }
+}
+
+.track-outline, .moving-outline {
+    position: absolute;
+    transform: rotate(-90deg);
+    transition: fill 0.2s linear;
+    z-index: -10;
+}
+
+.current-stages__dash-container {
+    position: relative;
+    width: 62px;
+
+    & .disabled-dash, .active-dash {
+        position: absolute;
+    }
+}
+
+.process-number {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    
+    @include flex(row, center, center);
+    transition: all 1s linear;
+}
+
+.half-disabled {
+    color: black;
+}
+
+.activated-text-color {
+    color: #595CFF;
+}
+
+.half-activated-circle-number {
+    color: black;
+}
+
+.activated-circle-number {
+    color: white;
+}
+
+.activated-circle-bg {
+    fill:  #595CFF;
+}

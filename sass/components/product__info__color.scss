@@ -1,0 +1,55 @@
+.product__info__color-block {
+    width: 145px;
+    height: 81px;
+    @include flex(column, space-between, flex-start);
+
+    & .color-block__name {
+        text-transform: capitalize;
+        @include font('Inter', 1.6rem, black, 400, 2.4rem);
+    }
+
+    & .color-choice {
+        width: 100%;
+        @include flex(row, space-between, center);
+
+        &__item {
+            background-color: white;
+            width: 36px;
+            height: 36px;
+            @include flex(row, center, center);
+            border-radius: 50%;
+            transition: all 0.5s linear;
+            border: 1px solid white;
+    
+            &:hover {
+                border: 1px solid #595CFF;
+            }
+
+            & .item__inside {
+                background-color: #F0F0F5;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;  
+                pointer-events: none;
+            }
+
+            & .first {
+                background-color: rgba(0, 128, 0, 0.397);
+            }
+
+            & .second {
+                background-color: rgba(128, 0, 0, 0.397);
+            }
+
+            & .third {
+                background-color: rgba(119, 128, 0, 0.397);
+            }
+
+        }
+    }
+}
+
+
+.active-item {
+    transform: translateY(25px);
+}

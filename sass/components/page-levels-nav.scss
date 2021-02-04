@@ -1,0 +1,41 @@
+.page-levels-navigation {
+    height: 52px;
+    @include flex(row, start, center);
+    margin: 10px 0 25px 0;
+}
+
+.levels {
+    @include flex(row, space-between, center);
+    width: 250px;
+    text-transform: capitalize;
+    list-style: none;
+    @include font('Inter', 1.2rem, black, 400, 1.6rem);
+
+    &__item {
+
+        &__name {
+            text-decoration: none;
+            color: black;
+            transition: all 0.4s linear;
+            
+            &:after {
+                content: '';
+                width: 0%;
+                height: 1px;
+                background-color: $hover-color;
+                display: block;
+                transition: all 0.4s linear;
+            }
+
+            &:hover {
+                opacity: 0.6;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+       
+    }
+}

@@ -1,0 +1,146 @@
+$hover-color: #595CFF;
+
+.second-gallery {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    & .wrapper {
+        overflow: hidden;
+        width: 1160px;
+    }
+
+    &__nav{
+        height: 74px;
+        @include flex(row, space-between, none);
+
+        & h2 {
+            @include font('Inter', 2.4rem, inherit, 500, 2.8rem)
+            }
+
+        & .slider-arrows {
+             width: 72px;
+             display: flex;
+             justify-content: space-between;
+             margin-right: 94px;
+
+             &__icons {
+                width: 50px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+                
+
+                &:hover {
+                    cursor: pointer;
+                    & .arrow-hover {
+                        fill: #979696;
+                    }
+                }
+            }
+        }   
+    }
+
+    &__items{
+        display: flex;
+        width: 5000px;
+        transition: margin-left 0.4s linear;
+    }
+}
+
+.second-gallery__items .item {
+   width: 260px;
+   height: 366px;
+   text-align: center;
+   margin-left: 40px;
+
+   &:nth-child(1) {
+       margin-left: 0;
+   }
+
+   &__picture {
+    width: 260px;
+    height: 260px;
+    @include flex(row, center, flex-end);
+    padding-bottom: 30px;
+    border-radius: 10px;
+
+        & h2 {
+            @include font('Inter', 2rem, black, 700, 1.8rem)
+        }
+
+        &__icons {
+            width: 70px;
+            @include flex(row, space-between, center);
+            opacity: 0;
+            transition: all 0.3s linear;
+
+            & .first-icon, .second-icon {
+                transition: all 0.4s linear;
+                width: 30px;
+                height: 30px;
+                @include flex(auto, center, center);
+                border-radius: 5px;
+                
+                & path {
+                    pointer-events: none;
+                }
+                
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba(89, 92, 255, 0.4);
+                }
+            }
+        }
+
+        & .see-more {
+            @include flex(column, center, auto);
+        }
+    }
+
+    &__name {
+        @include font('Inter', 1.8rem, inherit, 500, inherit);
+        margin-top: 20px;
+        margin-bottom: 8px;
+    }
+
+    & span {
+        @include font('Inter', 1.4rem, black, 500, 1.7rem);
+        &:nth-child(2n) {
+            text-decoration: line-through;
+            margin-left: 30px;
+    }
+    }
+
+    &:nth-of-type(1) .item__picture {
+         background-image: url('images/second-gallery/roses-pink.jpg');
+         background-size: cover;
+    }
+
+    &:nth-of-type(2) .item__picture {
+        background-image: url('images/second-gallery/roses.jpg');
+        background-size: cover;
+    }
+
+    &:nth-of-type(3) .item__picture {
+        background-image: url('images/second-gallery/sunny-bouquet.jpg');
+        background-size: cover;
+    }
+
+    &:nth-of-type(4) .item__picture {
+        background-image: url('images/second-gallery/tulips.jpg');
+        background-size: cover;
+    }
+
+    &:nth-of-type(5) .item__picture {
+        background-image: url('images/second-gallery/yellow-roses.jpg');
+        background-size: cover;
+    }
+
+    &:nth-child(6) .item__picture {
+        @include flex(column, center, center)
+    }
+ 
+}
+
+

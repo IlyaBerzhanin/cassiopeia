@@ -1,0 +1,72 @@
+$buttonColor: #595CFF;
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.main h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.8rem;
+    margin-top: 43px;
+    
+}
+
+.main p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem;
+    margin-top: 10px;
+}
+
+.button {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.4rem;
+    text-decoration: none;
+    width: 138px;
+    height: 50px;
+    @include flex(unset, space-around, center);
+    border-radius: 5px;
+    margin-top: 24px;
+    transition: all 0.5s linear;
+    color: black;
+
+    &:hover {
+        background-color: $buttonColor;
+    }
+}
+
+.main__whole-block {
+    background-image: url('images/blocks/whole-block.jpg');
+    display: flex;
+    flex-direction: column;
+    height: 220px;
+    font-weight: 500;
+    padding-left: 80px;
+    border-radius: 10px;
+}
+
+.main__half-block {
+    margin-top: 40px;
+    @include flex(row, space-between, unset);
+    flex-wrap: wrap;
+
+    &__item {
+        background-color: palevioletred;
+        width: 560px;
+        padding-bottom: 67px;
+        padding-left: 80px;
+        border-radius: 10px;
+    }
+
+    & .left {
+        background-image: url('images/blocks/left-half-block.jpg');
+        background-size: contain;
+    }
+    
+    & .right {
+        background-image: url('images/blocks/right-half-block.jpg');
+        background-repeat: round;
+        background-blend-mode: screen;
+    }
+}
+

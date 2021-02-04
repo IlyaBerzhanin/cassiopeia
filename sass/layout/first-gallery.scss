@@ -1,0 +1,169 @@
+$hover-color: #595CFF;
+
+@keyframes slider {
+    0% {transform: translateX(0);}
+    25% {transform: translateX(-300px);}
+    50% {transform: translateX(-600px);}
+    75% {transform: translateX(-300px);}
+    100% {transform: translateX(0);}
+}
+  
+.first-gallery {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+
+    & .wrapper {
+        overflow: hidden;
+        width: 1160px;
+    }
+
+    &__nav{
+        height: 74px;
+        @include flex(row, space-between, auto);
+
+        & .gallery-title{
+            @include font('Inter', 2.4rem, inherit, 500, 2.8rem);
+        }
+
+        & .slider-actions {
+            width: 72px;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 94px;
+
+            &__icon {
+                width: 50px;
+                height: 30px;
+                display: flex;
+                justify-content: center;
+
+                &:hover {
+                    cursor: pointer;
+                    & .arrow-hover {
+                        fill: #979696;
+                    }
+                }
+            }
+        }   
+    }
+
+    &__items{
+       display: flex;
+       width: 5000px;
+       transition: margin-left 0.4s linear;
+
+        &:hover{
+           animation-name: slider;
+           animation-duration: 9s;
+           animation-timing-function: steps(end);
+           animation-iteration-count: infinite;
+       }
+    }
+}
+
+
+.item {
+   width: 260px;
+   height: 366px;
+   text-align: center;
+   margin-left: 40px;
+
+   &:nth-child(1) {
+    margin-left: 0;
+    }
+
+   &__picture {
+    width: 260px;
+    height: 260px;
+    @include flex(row, center, flex-end);
+    padding-bottom: 30px;
+    border-radius: 10px;
+
+        & .see-more {
+            @include flex(column, center, auto);
+        }
+
+        & .see-more-title {
+            @include font('Inter', 2rem, black, 700, 1.8rem)
+        }
+
+        &__icons {
+            @include flex(row, space-between, auto);
+            width: 70px;
+            opacity: 0;
+            transition: all 0.3s linear;
+
+            & .first-icon, .second-icon {
+                transition: all 0.4s linear;
+                width: 30px;
+                height: 30px;
+                @include flex(auto, center, center);
+                border-radius: 5px;
+                
+                &:hover {
+                    cursor: pointer;
+                    background-color: rgba(89, 92, 255, 0.4);
+                }
+            }
+        }
+
+        &:hover {
+            & .item__picture__icons {
+                opacity: 1;
+                transform: scale(2);
+            }
+        }
+    }
+
+    &__name {
+        @include font('Inter', 1.8rem, inherit, 500, inherit);
+        margin-top: 20px;
+        margin-bottom: 8px;
+    }
+
+    &__prices-block {
+        @include flex(row, center, center);
+
+        & .item__price {
+            @include font('Inter', 1.4rem, black, 500, 1.7rem);
+            &:nth-child(2n) {
+                text-decoration: line-through;
+                margin-left: 30px;
+            }
+        }
+    
+    }
+
+    
+    &:nth-of-type(1) .item__picture {
+         background-image: url('images/first-gallery/bouquet-dream.jpg');
+         background-size: cover;
+    }
+
+    &:nth-of-type(2) .item__picture {
+        background-image: url('images/first-gallery/bouquet-lilies.jpg');
+        background-size: cover;
+    }
+
+    &:nth-of-type(3) .item__picture {
+        background-image: url('images/first-gallery/bouquet-spring-day.jpg');
+        background-size: cover;
+    }
+
+    &:nth-of-type(4) .item__picture {
+        background-image: url('images/first-gallery/white-roses.jpg');
+        background-size: cover;
+    }
+
+    &:nth-of-type(5) .item__picture {
+        background-image: url('images/second-gallery/yellow-roses.jpg');
+        background-size: cover;
+    }
+
+    &:nth-child(6) .item__picture {
+        @include flex(column, center, center)
+    }
+ 
+}
+

@@ -1,0 +1,38 @@
+//---------------base-----------------------
+
+@import "sass/base/base.scss";
+
+//-------------------abstract------------------
+@import "sass/abstract/mixins.scss";
+
+//--------------------layout---------------------
+@import "sass/layout/header.scss";
+@import "sass/layout/main.scss";
+@import "sass/layout/first-gallery.scss";
+@import "sass/layout/second-gallery.scss";
+@import "sass/layout/footer.scss";
+@import "sass/layout/product.scss";
+
+//-------------------Components-------------------
+
+//-------------------card page--------------------------
+@import "sass/components/page-levels-nav.scss";
+@import "sass/components/product-self.scss";
+@import "sass/components/product__info.scss";
+@import "sass/components/product__info__count.scss";
+@import "sass/components/product__info__color.scss";
+@import "sass/components/product__info__purchase-buttons.scss";
+@import "sass/components/product__info__client-wishes.scss";
+
+//-------------------catalog page---------------------
+@import "sass/components/catalog-nav.scss";
+@import "sass/components/see-more-button.scss";
+
+//--------------------checkout-page---------------
+@import "sass/components/checkout-page/process-and-delivery.scss";
+@import "sass/components/checkout-page/delivery.scss";
+@import "sass/components/checkout-page/delivery__method.scss";
+@import "sass/components/checkout-page/delivery__adress.scss";
+@import "sass/components/checkout-page/delivery__date-and-time.scss";
+@import "sass/components/checkout-page/delivery__buttons.scss";
+@import "sass/components/checkout-page/order-total.scss";

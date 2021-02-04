@@ -1,0 +1,34 @@
+.product__info__counter-block {
+    width: 121px;
+    height: 76px;
+    @include flex(column, space-between, flex-start);
+
+    & .counter-name {
+        text-transform: capitalize;
+        @include font('Inter', 1.6rem, black, 400, 2.4rem);
+    }
+}
+
+.counter {
+    width: 116px;
+    @include flex(row, space-between, center);
+
+    & .quantity-number {
+        @include font('Inter', 1.4rem, black, 500, 1.7rem);
+    }
+
+    &__button{
+        @include flex(row, center, center);
+        border-radius: 50%;
+        transition: all 0.3s linear;
+
+        &:hover {
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+            transform: scale(1.2);
+        }
+
+        &__circle {
+            pointer-events: none;
+        }
+    }
+}
