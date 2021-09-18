@@ -1,1 +1,1 @@
-# https://ilyaberzhanin.github.io/cassiopeia
+# https://ilyaberzhanin.github.io/cassiopeia/home
